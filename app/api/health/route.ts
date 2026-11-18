@@ -1,0 +1,2 @@
+import { NextResponse } from "next/server";
+export async function GET(){return NextResponse.json({service:"gameverse-catalog",status:"ok",databaseConfigured:Boolean(process.env.TIDB_HOST&&process.env.TIDB_USER&&process.env.TIDB_PASSWORD&&process.env.TIDB_DATABASE)});}
