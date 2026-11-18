@@ -8,7 +8,7 @@ export function getDbPool() {
     globalForDb.gameversePool = mysql.createPool({
       host: url.hostname, port: Number(url.port || 4000),
       user: decodeURIComponent(url.username), password: decodeURIComponent(url.password),
-      database: decodeURIComponent(url.pathname.replace(/^\\//, "")),
+      database: decodeURIComponent(url.pathname.slice(1)),
       waitForConnections: true, connectionLimit: 8, queueLimit: 0,
       ssl: { minVersion: "TLSv1.2" }
     });
